@@ -1,0 +1,27 @@
+01. Log into the host device
+   02. Run the following commands in terminal
+         # install docker and docker-compose
+         sudo apt install docker docker-compose docker.io
+         # create a working directory
+         sudo mkdir lemmy && cd lemmy/
+         # download the container files
+         sudo wget https://raw.githubusercontent.com/Lem...
+         sudo wget https://raw.githubusercontent.com/Lem...
+         sudo wget https://raw.githubusercontent.com/Lem...
+         # create pictrs directory
+         sudo mkdir -p volumes/pictrs
+         sudo chown -R 991:991 volumes/pictrs
+         # edit docker-compose.yml
+         sudo nano docker-compose.yml
+   03. Scroll down to the POSTGRES_PASSWORD line and enter a secure password
+   04. Press CTRL+O, Enter, CTRL+X to write the changes to docker-compose.yml
+   05. Continue with the following command
+         sudo nano lemmy.hjson
+   06. Press CTRL + W and search for database
+   07. Scroll down to the database password and update the value to match the value set in docker-compose.yml earlier
+   08. Press CTRL+O, Enter, CTRL+X to write the changes to lemmy.hjson
+   09. Run the following command to start the Lemmy Docker container
+         sudo docker-compose up -d
+   10. Open a web browser and navigate to http://DNSorIP:1235
+   11. Log into Lemmy with the username and password lemmy
+ 
